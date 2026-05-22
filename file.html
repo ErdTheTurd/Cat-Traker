@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Chip Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐱 Cat Chip Tracker</h1>
+            <p>Find your chipped cat by microchip number</p>
+        </header>
+
+        <main>
+            <!-- Search Section -->
+            <section class="search-section">
+                <h2>Search Cat by Microchip Number</h2>
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="chipInput" 
+                        placeholder="Enter microchip number (e.g., 123456789012345)"
+                        maxlength="20"
+                    >
+                    <button id="searchBtn">Search</button>
+                </div>
+                <div id="errorMessage" class="error-message"></div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section hidden">
+                <h2>Cat Information</h2>
+                <div class="cat-card">
+                    <div class="cat-info">
+                        <p><strong>Name:</strong> <span id="catName"></span></p>
+                        <p><strong>Microchip Number:</strong> <span id="catChip"></span></p>
+                        <p><strong>Breed:</strong> <span id="catBreed"></span></p>
+                        <p><strong>Color:</strong> <span id="catColor"></span></p>
+                        <p><strong>Age:</strong> <span id="catAge"></span> years</p>
+                        <p><strong>Owner:</strong> <span id="ownerName"></span></p>
+                        <p><strong>Owner Phone:</strong> <span id="ownerPhone"></span></p>
+                        <p><strong>Owner Email:</strong> <span id="ownerEmail"></span></p>
+                        <p><strong>Last Known Location:</strong> <span id="lastLocation"></span></p>
+                        <p><strong>Status:</strong> <span id="catStatus"></span></p>
+                    </div>
+                </div>
+                <button id="resetBtn" class="reset-btn">Search Another Cat</button>
+            </section>
+
+            <!-- Register Section -->
+            <section class="register-section">
+                <h2>Register Your Cat's Chip</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="newCatName">Cat Name:</label>
+                        <input type="text" id="newCatName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newChipNumber">Microchip Number:</label>
+                        <input type="text" id="newChipNumber" placeholder="15-digit number" maxlength="20" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newBreed">Breed:</label>
+                        <input type="text" id="newBreed" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newColor">Color:</label>
+                        <input type="text" id="newColor" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newAge">Age:</label>
+                        <input type="number" id="newAge" min="0" max="30" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ownerFullName">Owner Name:</label>
+                        <input type="text" id="ownerFullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ownerPhoneNumber">Owner Phone:</label>
+                        <input type="tel" id="ownerPhoneNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ownerEmailAddress">Owner Email:</label>
+                        <input type="email" id="ownerEmailAddress" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastKnownLocation">Last Known Location:</label>
+                        <input type="text" id="lastKnownLocation" placeholder="City, State" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Register Cat</button>
+                </form>
+                <div id="registerMessage" class="register-message"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Cat Chip Tracker. Helping reunite families with their feline friends.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
